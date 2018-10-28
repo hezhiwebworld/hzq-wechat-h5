@@ -1,0 +1,84 @@
+/*
+* jQuery.autocomplete.css (v1.1.0)
+* authored by nswish (nswish@gmail.com)
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+div.ac {
+	position: absolute;
+	display: none;
+	overflow: auto;
+	width: 100%!important;
+	max-height: 60%;
+	overflow-y: auto;
+	box-shadow: 0 8px 10px rgba(0,0,0,.2);
+	border-top: 1px solid #ccc;
+}
+
+div.ac > ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+div.ac > ul > li {
+	margin: 0px;
+	list-style-type: none;
+	background-color: white;
+	word-break: break-all;
+}
+
+div.ac > ul > li > div {
+	display: table-row;
+	width: 100%;
+}
+
+div.ac > ul > li > div em {
+	background-color: #ffeec2;
+	font-style: normal;
+	font-size: 15px;
+}
+
+div.ac > ul > li.normal {
+	padding: 0 20px;
+}
+div.ac > ul > li:hover {
+	background: #f4f4f4;
+}
+div.ac > ul > li.normal > div > span{
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 16px;
+}
+
+div.ac > ul > li.iconList {
+	padding: 0px 0px 0px 2px;
+}
+
+div.ac > ul > li.iconList > div > div {
+	display: table-cell;
+	vertical-align: middle;
+	padding-right: 5px;
+}
+
+div.ac > ul > li.iconList > div > div > img {
+	display: table;
+	display: table-cell\9;
+}   
+
+div.ac > ul > li.iconList > div > span {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+div.ac > ul > li.selected {
+}

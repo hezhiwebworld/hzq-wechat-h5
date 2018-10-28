@@ -1,0 +1,24 @@
+<import src="header$169ad386" /><import src="footer$152f20d8" />
+<import src="header$169ad386" /><import src="nodata$4c99c6e4" />
+
+<import src="header$169ad386" />
+<import src="footer$152f20d8" />
+<import src="card$5f3e36c9" />
+<import src="pick$33a94b5a" /><template name="data-v-38c33e03-default-1"> </template>
+<template name="data-v-38c33e03-title-1">贷款</template>
+<template name="data-v-38c33e03-content-1"></template>
+<template name="data-v-58ec3a11-default-1"> </template>
+<template name="data-v-58ec3a11-title-1">我的申请</template>
+<template name="data-v-58ec3a11-content-1"><view class="_div data-v-58ec3a11 tabs"><view bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_a data-v-58ec3a11 {{[boxName === 'loan' ? 'curr' : '']}}"><view class="_i data-v-58ec3a11 cufont cufont-loan-active"></view> 贷款</view> <view bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_a data-v-58ec3a11 {{[boxName === 'ccCard' ? 'curr' : '']}}"><view class="_i data-v-58ec3a11 cufont cufont-creditcard "></view> 信用卡(6)</view></view> <view class="_div data-v-58ec3a11 hui-content" hidden="{{!(boxName === 'loan')}}"><template data="{{...$root[$kk+'0'], $root}}" is="nodata$4c99c6e4"></template></view> <view class="_div data-v-58ec3a11 list-apply list-apply-creditcard" hidden="{{!(boxName === 'ccCard')}}" wx:if="{{itemList.length != 0}}"><view class="_div data-v-58ec3a11 item" wx:key="i" key="{{i}}" wx:for="{{itemList}}" wx:for-index="i" wx:for-item="item"><view class="_div data-v-58ec3a11 thumb"><image src="{{item.imgUrl}}" alt class="_img data-v-58ec3a11"></image></view> <view class="_h6 data-v-58ec3a11">{{item.pname}}<view class="_small data-v-58ec3a11">{{item.desc}}</view></view></view></view></template>
+<template name="data-v-20ebdea3-default-1"> </template>
+<template name="data-v-20ebdea3-title-1">信用卡</template>
+<template name="data-v-20ebdea3-content-1"></template>
+<template name="data-v-6db92d2c-default-0"> </template>
+<template name="data-v-6db92d2c-title-0">我的消息</template>
+<template name="data-v-6db92d2c-content-0"><view class="_ul data-v-6db92d2c list-msg"><view class="_p data-v-6db92d2c date">2018/08/09</view> <view class="_li data-v-6db92d2c"><view class="_i data-v-6db92d2c itfont itfont-message"></view> <view class="_h4 data-v-6db92d2c">消息标题</view> <view class="_p data-v-6db92d2c">消息内容消息内容消息内容消息内容消息内容消息内容</view></view> <view class="_p data-v-6db92d2c date">2018/08/09</view> <view class="_li data-v-6db92d2c"><view class="_i data-v-6db92d2c itfont itfont-message"></view> <view class="_h4 data-v-6db92d2c">消息标题</view> <view class="_p data-v-6db92d2c">消息内容消息内容消息内容消息内容消息内容消息内容</view></view> <view class="_p data-v-6db92d2c date">2018/08/09</view> <view class="_li data-v-6db92d2c"><view class="_i data-v-6db92d2c itfont itfont-message"></view> <view class="_h4 data-v-6db92d2c">消息标题</view> <view class="_p data-v-6db92d2c">消息内容消息内容消息内容消息内容消息内容消息内容</view></view> <view class="_p data-v-6db92d2c date">2018/08/09</view> <view class="_li data-v-6db92d2c"><view class="_i data-v-6db92d2c itfont itfont-message"></view> <view class="_h4 data-v-6db92d2c">消息标题</view> <view class="_p data-v-6db92d2c">消息内容消息内容消息内容消息内容消息内容消息内容</view></view> <view class="_p data-v-6db92d2c date">2018/08/09</view> <view class="_li data-v-6db92d2c"><view class="_i data-v-6db92d2c itfont itfont-message"></view> <view class="_h4 data-v-6db92d2c">消息标题</view> <view class="_p data-v-6db92d2c">消息内容消息内容消息内容消息内容消息内容消息内容</view></view></view></template>
+<template name="data-v-53b153a8-default-1"> </template>
+<template name="data-v-53b153a8-title-1">新口子</template>
+<template name="data-v-53b153a8-content-1"></template>
+<template name="data-v-7837f414-default-1"> </template>
+<template name="data-v-7837f414-title-1"><view class="_i data-v-7837f414 cufont cufont-zmf"></view> 芝麻分借</template>
+<template name="data-v-7837f414-content-1"></template>

@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/index/main",
+    "pages/apply/main",
+    "pages/ccCard/main",
+    "pages/counter/main",
+    "pages/forgetpass/main",
+    "pages/loan/main",
+    "pages/login/main",
+    "pages/logs/main",
+    "pages/message/main",
+    "pages/mine/main",
+    "pages/newarrival/main",
+    "pages/register/main",
+    "pages/saveApply/main",
+    "pages/saveuserinfo/main",
+    "pages/zmf/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "mpvue demo",
+    "navigationBarTextStyle": "black"
+  }
+}

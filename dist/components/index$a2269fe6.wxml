@@ -1,0 +1,1 @@
+<template name="index$a2269fe6"><view class="_div data-v-1eeeddc2 counter-warp"><view bindtap="handleProxy" class="_a data-v-1eeeddc2 home" data-eventid="{{'0'}}" data-comkey="{{$k}}">去往首页</view></view></template>

@@ -1,0 +1,135 @@
+<template>
+  <div class="container" ref="wrapper">
+    <headerTop :isscTop="isscTop">
+      <h1 slot="title">贷款</h1>
+      <ListLoan slot="content" :isMore="isMore" :bannerList="bannerList" :loanList="loanList" :newarrival="newarrival"></ListLoan>
+    </headerTop>
+    <!-- 底部组件 -->
+    <footerNav></footerNav>
+    
+  </div>
+</template>
+
+<script>
+// 组件引用
+import footerNav from '@/components/footer'
+import headerTop from '@/components/header'
+import ListLoan from '@/components/loadList'
+import { randomString } from '@/common/utils'
+import signMd from '@/common/signMd'
+
+import { mapState ,mapMutations } from 'vuex'
+
+export default {
+  data () {
+    return {
+       bannerList: ['../../static/../../static/img/swipe/2.jpg', '../../static/../../static/img/swipe/2.jpg', '../../static/../../static/img/swipe/2.jpg'],
+      scTop: 0, 
+      isscTop: false,   // top滚动变色
+      scrollHieght: 0,  // 滚动高度
+      isMore: false,    // 是否加载更多
+      pageSize: 6,
+      currentPage:1,
+      isloadMoreData: false, 
+      loanList: [],
+      newarrival: true
+    }
+  },
+  components: {
+    footerNav, headerTop,ListLoan 
+  },
+  computed: {
+    ...mapState(['loan'])
+  },
+  created(){
+    document.title = '信用卡';
+    console.log(this.loan)
+    this.getCreditCardList();
+  },
+  mounted(){
+    var that = this
+    window.onscroll = function() {
+      this.TopHeight = document.documentElement.scrollTop || document.body.scrollTop;
+      that.scTop  = this.TopHeight
+      that.scrollHieght = document.documentElement.scrollHeight - that.$refs.wrapper.getBoundingClientRect().height
+      // 控制头部banner变色
+      if(that.scTop > 44) {
+          that.isscTop = true
+      }else{
+          that.isscTop = false
+      }
+      // 上拉加载
+      if(that.scrollHieght - that.scTop < 100){
+        that.isMore = true;
+        that.getCreditCardList();
+      }else{
+        that.isMore = false
+      }
+      // 滚动隐藏下拉菜单
+      that.UPDATE_DIALOG({isshow: false})
+    }
+  },
+  methods: {
+    ...mapMutations(['UPDATE_DIALOG']),
+    getCreditCardList() {
+       if(this.isloadMoreData) {
+         return false;
+       }
+       this.isloadMoreData = true
+       let data = {
+         amountLimit: this.loan.amount,
+         productType: this.loan.type,
+         orderByType: this.loan.rate,
+         pageSize: this.pageSize,
+         currentPage: this.currentPage,
+          t: randomString()
+       }
+       data.sign = signMd(data);
+       this.service.httpRequest({
+          data: data,
+          methods: 'POST',
+          url: '/product/productList',
+          type: 0
+       }).then((res)=> {
+         console.log(res.data)
+          if(res.data.code === '0'){
+            this.pageSize = res.data.pageSize ;
+            this.currentPage = parseInt(res.data.currentPage) +1;
+            if(res.data.data.length === 0) {
+              this.isloadMoreData = true;
+            }else {
+              this.isloadMoreData = false;
+              this.loanList = this.loanList.concat(res.data.data)
+            }
+          }
+       }).catch(()=> {
+         // 异常
+       }) 
+     }
+  },
+  watch: {
+    loan: {
+      handler(newV, oldV) {
+        console.log(newV, oldV)
+        this.getCreditCardList();
+      },
+      deep: true
+    }
+  }
+}
+</script>
+
+<style lang="less" scoped>
+.container {
+  background: #CCC;
+  height: 100%;
+  width: 100%;
+  // padding-bottom: 54px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.hui-header {
+  font-size: 0;
+}
+</style>
